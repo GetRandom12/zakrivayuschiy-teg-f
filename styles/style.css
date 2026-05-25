@@ -60,3 +60,27 @@
   border: 2px solid #000;
   block-size: var(--block-size-main);
 }
+
+.card__title {
+  font-size: 18px;
+  font-variation-settings: 'wght' 715;
+  padding-inline: 10px;
+  padding-block: 4px;
+  border-block-end: 2px solid #000;
+}
+
+.card__image {
+  position: relative;
+  border-block-end: 2px solid #000;
+}
+
+.card__image-label {
+  position: absolute;
+  inset-inline-end: 25px;
+  inset-block-start: 25px;
+  color: #000;
+  font-family: var(--accent-font), monospace;
+  text-shadow: var(--text-shadow);
+  mix-blend-mode: hard-light;
+  opacity: 50%;
+}
