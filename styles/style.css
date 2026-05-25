@@ -23,7 +23,7 @@
   background-size: cover;
   background-attachment: fixed;
   gap: 100px;
-  margin-block-start:100px;
+  margin-top:100px;
 }
 
 .header {
@@ -89,8 +89,8 @@ img {
 
 .card__image-label {
   position: absolute;
-  inset-inline-end: 25px;
-  inset-block-start: 25px;
+  right: 25px;
+  top: 25px;
   color: #000;
   font-family: var(--accent-font), monospace;
   text-shadow: var(--text-shadow);
@@ -105,7 +105,7 @@ img {
   margin: 25px;
 }
 
-.card__buttons {
+.card__button {
   display: flex;
   gap: 7px;
   justify-content: end;
@@ -114,13 +114,128 @@ img {
 }
 
 .button {
+  position: relative;
+  text-align: center;
   background-color: #fff;
   overflow: hidden;
-  width: 130px;
+  transition: box-shadow 0.3s ease;
+  border: 2px solid #000;
+  user-select: none;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px #000;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  translate: -100% 0%;
+  transition: translate .5s ease-in-out;
+}
+
+.button:hover::before {
+  translate: 0% 0%;
+}
+
+.card__like-button {
+  min-inline-size: 130px;
+  padding: 7px;
   height: 38px;
+}
+
+.button__text {
+  position: relative;
+  color: #fff;
+  font-family: var(--accent-font), monospace;
+  font-size: 14px;
+  mix-blend-mode: difference;
 }
 
 .card__icon-button {
   background-color: transparent;
   border: 2px solid transparent;
 }
+
+
+
+
+.save__button {
+  margin-bottom: 50px;
+  min-inline-size: 306px;
+  min-block-size: 84px;
+}
+
+.save__button-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.floppy {
+  position: relative;
+  mix-blend-mode: difference;
+}
+
+.push-floppy {
+  min-inline-size: 341px;
+  padding: 28px;
+}
+
+.push-floppy .button__text {
+  text-transform: uppercase;
+}
+
+.push-floppy::backdrop {
+  background-color: #000;
+  opacity: 75%;
+}
+
+.push-floppy__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.push-floppy__content-text {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.push-floppy__content-text .floppy {
+  min-inline-size: 39px;
+  min-block-size: 39px;
+}
+
+.push-floppy__content-text .button__text {
+  line-height: 130%;
+}
+
+.push-floppy__close-button {
+  background-color: transparent;
+  border: 2px solid #000;
+  min-inline-size: 261px;
+  min-block-size: 38px;
+}
+
+@supports ((text-stroke: 1px #fff) or (--webkit-text-stroke: 1px #fff)) {
+  .card__image-label {
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+    text-shadow: none;
+  }
