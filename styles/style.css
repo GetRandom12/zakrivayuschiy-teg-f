@@ -32,7 +32,8 @@
   align-items: center;
   background-color: #fff;
   border: 2px solid #000;
-  block-size: var(--block-size-main);
+  inline-size: var(--inline-size-main);
+  block-size: clamp(327px, calc(312.563px + 3.85vw), 368px);
 }
 
 .header__title {
@@ -62,7 +63,7 @@
 }
 
 .card {
-  block-size: var(--block-size-main);
+  inline-size: var(--inline-size-main);
   background-color: #fff;
   border: 2px solid #000;
 }
@@ -80,6 +81,12 @@
   border-block-end: 2px solid #000;
 }
 
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .card__image-label {
   position: absolute;
   inset-inline-end: 25px;
@@ -89,4 +96,19 @@
   text-shadow: var(--text-shadow);
   mix-blend-mode: hard-light;
   opacity: 50%;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 25px;
+}
+
+.card__buttons {
+  display: flex;
+  gap: 7px;
+  justify-content: end;
+  align-items: center;
+  margin: 25px 25px 25px 0;
 }
