@@ -18,7 +18,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: 'wght'  410;
+  font-variation-settings: 'wght'  var(--regular);
   background-image: var(--background-gradient);
   background-size: cover;
   background-attachment: fixed;
@@ -78,17 +78,48 @@
 .card__image {
   position: relative;
   border-block-end: 2px solid #000;
+  aspect-ratio: 1 / 1;
 }
 
 img {
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+.brightness__filter {
+  filter: brightness(200%);
+}
+
+.contrast__filter {
+  filter: contrast(30%);
+}
+
+.blur__filter {
+  filter: blur(0.4rem);
+}
+
+.sepia__filter {
+  filter: sepia(50%);
+}
+
+.grayscale-blur__filter{
+  filter: grayscale(40%) blur(0.2rem);
+}
+
+.saturate__filter {
+  filter: saturate(150%);
+}
+
+.hue-rotate__filter {
+  filter: hue-rotate(90deg)
 }
 
 .card__image-label {
+  font-size: 14px;
   position: absolute;
-  right: 25px;
+  right: 23px;
   top: 25px;
   color: #000;
   font-family: var(--accent-font), monospace;
@@ -100,16 +131,18 @@ img {
 .card__text {
   display: flex;
   flex-direction: column;
+  line-height: 21px;
   gap: 25px;
-  margin: 25px;
+  margin: 20px 25px 25px 25px;
+  font-size: 18px;
+  font-variation-settings: 'wght' var(--regular);
 }
 
 .card__button {
   display: flex;
-  gap: 7px;
   justify-content: end;
   align-items: center;
-  margin: 25px 25px 25px 0;
+  margin: 25px 25px 25px 25px;
 }
 
 .button {
@@ -150,6 +183,7 @@ img {
 .card__like-button {
   min-inline-size: 130px;
   padding: 7px;
+  text-align: center;
   height: 38px;
 }
 
@@ -164,20 +198,18 @@ img {
 .card__icon-button {
   background-color: transparent;
   border: 2px solid transparent;
+  transition: border 0.3s ease;
 }
-
-
-
 
 .save__button {
   margin-bottom: 50px;
-  min-inline-size: 306px;
-  min-block-size: 84px;
+  min-inline-size: 335px;
+  min-block-size: 55px;
 }
 
 .save__button-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 8px;
@@ -237,4 +269,15 @@ img {
     -webkit-text-stroke: 1px #fff;
     text-stroke: 1px #fff;
     text-shadow: none;
+  }}
+
+  @media (width <= 375px) {
+  .save__button-content {
+  flex-direction: column;
   }
+  .save__button {
+  margin-bottom: 50px;
+  min-inline-size: 306px;
+  min-block-size: 84px;
+}
+}
