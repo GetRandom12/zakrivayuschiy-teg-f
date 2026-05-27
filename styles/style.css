@@ -18,7 +18,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: 'wght'  410;
+  font-variation-settings: 'wght'  var(--regula);
   background-image: var(--background-gradient);
   background-size: cover;
   background-attachment: fixed;
@@ -70,9 +70,8 @@
 
 .card__title {
   font-size: 18px;
-  font-variation-settings: 'wght' 715;
-  padding-inline: 10px;
-  padding-block: 4px;
+  font-variation-settings: 'wght' var(--bold);
+  padding: 4px 10px;
   border-block-end: 2px solid #000;
 }
 
@@ -87,7 +86,36 @@ img {
   height: 100%;
 }
 
+.brightness__filter {
+  filter: brightness(200%);
+}
+
+.contrast__filter {
+  filter: contrast(30%);
+}
+
+.blur__filter {
+  filter: blur(0.4rem);
+}
+
+.sepia__filter {
+  filter: sepia(50%);
+}
+
+.grayscale-blur__filter{
+  filter: grayscale(40%) blur(0.2rem);
+}
+
+.saturate__filter {
+  filter: saturate(150%);
+}
+
+.hue-rotate__filter {
+  filter: hue-rotate(90deg)
+}
+
 .card__image-label {
+  font-size: 14px;
   position: absolute;
   right: 25px;
   top: 25px;
@@ -103,11 +131,12 @@ img {
   flex-direction: column;
   gap: 25px;
   margin: 25px;
+  font-size: 18px;
+  font-variation-settings: 'wght' var(--regular);
 }
 
 .card__button {
   display: flex;
-  gap: 7px;
   justify-content: end;
   align-items: center;
   margin: 25px 25px 25px 0;
@@ -141,7 +170,7 @@ img {
   inset: 0;
   background-color: #000;
   translate: -100% 0%;
-  transition: translate .5s ease-in-out;
+  transition: translate 0.5s ease-in-out;
 }
 
 .button:hover::before {
@@ -166,9 +195,6 @@ img {
   background-color: transparent;
   border: 2px solid transparent;
 }
-
-
-
 
 .save__button {
   margin-bottom: 50px;
@@ -238,4 +264,10 @@ img {
     -webkit-text-stroke: 1px #fff;
     text-stroke: 1px #fff;
     text-shadow: none;
+  }}
+
+  @media (width > 375px) {
+  .save__button-content {
+    flex-direction: row;
   }
+}
