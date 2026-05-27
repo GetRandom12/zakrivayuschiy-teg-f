@@ -71,8 +71,7 @@
 .card__title {
   font-size: 18px;
   font-variation-settings: 'wght' 715;
-  padding-inline: 10px;
-  padding-block: 4px;
+  padding: 5px 10px;
   border-block-end: 2px solid #000;
 }
 
@@ -141,7 +140,7 @@ img {
   inset: 0;
   background-color: #000;
   translate: -100% 0%;
-  transition: translate .5s ease-in-out;
+  transition: translate 0.5s ease-in-out;
 }
 
 .button:hover::before {
