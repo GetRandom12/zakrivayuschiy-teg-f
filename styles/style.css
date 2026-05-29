@@ -132,7 +132,6 @@ img {
 
 .card__text {
   display: flex;
-
   flex-direction: column;
   line-height: 21px;
   gap: 25px;
@@ -146,7 +145,15 @@ img {
   justify-content: end;
   align-items: center;
   margin: 25px 25px 25px 25px;
-  gap: 15px;
+  gap: 10px;
+}
+.like-icon {
+  display: block;
+  block-size: 36px;
+}
+
+.card__icon-button:focus-visible {
+  border-color: #000;
 }
 
 .button {
@@ -200,11 +207,15 @@ img {
 }
 
 .card__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   background-color: transparent;
   border: 2px solid transparent;
   transition: border 0.3s ease;
-  max-inline-size: 39px;
-  max-block-size: 36px;
+  inline-size: 39px;
+  block-size: 36px;
 }
 
 .save__button {
@@ -269,7 +280,7 @@ img {
 .push-floppy__close-button {
   background-color: transparent;
   border: 2px solid #000;
-  min-inline-size: 261px;
+  min-inline-size: 291px;
   min-block-size: 38px;
 }
 
@@ -295,5 +306,15 @@ img {
   }
   .push-floppy {
     padding: 30px 40px;
+  }
+  .floppy {
+    width: 28px;
+    height: 28px;
+  }
+  .push-floppy__content-text {
+    max-inline-size: 261px;
+  }
+  .push-floppy__close-button {
+    min-inline-size: 261px;
   }
 }
