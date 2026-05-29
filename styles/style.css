@@ -145,13 +145,16 @@ img {
   justify-content: end;
   align-items: center;
   margin: 25px 25px 25px 25px;
-  gap: 10px;
+  gap: 7px;
 }
 .like-icon {
-  display: block;
+  flex-shrink: 0;
   block-size: 36px;
 }
 
+.card__icon-button:focus {
+  outline:none;
+}
 .card__icon-button:focus-visible {
   border-color: #000;
 }
@@ -193,7 +196,7 @@ img {
 
 .card__like-button {
   min-inline-size: 130px;
-  padding: 7px 0;
+  padding: 8px 0;
   text-align: center;
   height: 38px;
 }
@@ -214,8 +217,8 @@ img {
   background-color: transparent;
   border: 2px solid transparent;
   transition: border 0.3s ease;
-  inline-size: 39px;
-  block-size: 36px;
+  inline-size: 38px;
+  block-size: 38px;
 }
 
 .save__button {
